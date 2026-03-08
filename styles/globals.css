@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-50 text-ink-900 font-sans antialiased;
+  }
+
+  /* Subtle grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    z-index: 9999;
+  }
+}
+
+@layer components {
+  /* Prose styles for markdown content */
+  .prose-trading {
+    @apply text-ink-800 leading-relaxed;
+  }
+
+  .prose-trading h1,
+  .prose-trading h2,
+  .prose-trading h3 {
+    @apply font-serif text-ink-900 font-semibold mt-8 mb-4;
+  }
+
+  .prose-trading h1 { @apply text-3xl; }
+  .prose-trading h2 { @apply text-2xl border-b border-ink-200 pb-2; }
+  .prose-trading h3 { @apply text-xl; }
+
+  .prose-trading p {
+    @apply mb-5 text-ink-700 leading-7;
+  }
+
+  .prose-trading ul,
+  .prose-trading ol {
+    @apply mb-5 pl-6 space-y-2;
+  }
+
+  .prose-trading ul { @apply list-disc; }
+  .prose-trading ol { @apply list-decimal; }
+
+  .prose-trading li { @apply text-ink-700; }
+
+  .prose-trading strong { @apply font-semibold text-ink-900; }
+
+  .prose-trading em { @apply italic; }
+
+  .prose-trading blockquote {
+    @apply border-l-4 border-gold pl-5 my-6 italic text-ink-600;
+  }
+
+  .prose-trading code {
+    @apply font-mono text-sm bg-ink-100 px-1.5 py-0.5 rounded text-gold-dark;
+  }
+
+  .prose-trading pre {
+    @apply bg-ink-900 text-ink-100 p-5 rounded-lg overflow-x-auto my-6;
+  }
+
+  .prose-trading pre code {
+    @apply bg-transparent text-ink-100 p-0;
+  }
+
+  .prose-trading a {
+    @apply text-gold-dark underline underline-offset-2 hover:text-gold transition-colors;
+  }
+
+  .prose-trading hr {
+    @apply border-ink-200 my-8;
+  }
+
+  /* Gold rule divider */
+  .gold-rule {
+    @apply w-12 h-px bg-gold my-6;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+
+/* Calendly widget overrides */
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 700px;
+}
