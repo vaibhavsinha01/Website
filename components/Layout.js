@@ -8,8 +8,8 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 export default function Layout({ children, title, description }) {
-  const pageTitle = title ? `${title} — EdgeTrader` : 'EdgeTrader | Trading Education & Strategy';
-  const pageDesc = description || 'Professional trading education, strategies, and coaching for serious market participants.';
+  const pageTitle = title ? `${title} — SimurghCapital` : 'SimurghCapital | Trading Strategy & Automation';
+  const pageDesc = description || 'Professional trading strategies, and automation for better returns.';
 
   return (
     <>
