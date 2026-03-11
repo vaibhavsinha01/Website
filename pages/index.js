@@ -29,7 +29,7 @@ export default function Home({ posts }) {
         <div className="relative max-w-5xl mx-auto px-6 py-28 md:py-36">
           {/* Eyebrow */}
           <p className="text-xs font-mono text-gold tracking-widest uppercase mb-6 animate-fade-up">
-            Trading Education
+            Trading Automation 
           </p>
 
           {/* Headline */}

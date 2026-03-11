@@ -10,7 +10,7 @@ export default function About() {
   return (
     <Layout
       title="About"
-      description="Learn about the trading educator behind EdgeTrader — experience, philosophy, and approach."
+      description="Learn about the trading strategies behind a profitable alpha."
     >
       {/* Page Header */}
       <div className="bg-ink-900 text-ink-50 py-16 px-6">
